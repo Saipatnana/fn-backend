@@ -15,7 +15,7 @@ app.use(cors());
 
 // Register a new user
 app.post("/register", (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, password } =  req.body;
   const isuser = db.get(`SELECT * from users where email = ?`,[email]);
   if (isuser) {
     res.status(203).send("User already exists");
